@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane styleClass="auth-stage"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.marketplace.shop.controller.RegisterController">
+    <ScrollPane fitToWidth="true" styleClass="auth-stage">
+        <VBox alignment="CENTER" spacing="16" styleClass="auth-card" maxWidth="440">
+            <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+            <Label text="Marketplace Shop" styleClass="title-label"/>
+            <Label text="Create New Account" styleClass="subtitle-label"/>
+
+            <VBox spacing="10" maxWidth="320" alignment="CENTER_LEFT">
+                <Label text="Full Name" styleClass="field-label"/>
+                <TextField fx:id="nameField" promptText="Enter your full name" maxWidth="320"/>
+
+                <Label text="Email" styleClass="field-label"/>
+                <TextField fx:id="emailField" promptText="you@example.com" maxWidth="320"/>
+
+                <Label text="Phone Number (used as password)" styleClass="field-label"/>
+                <TextField fx:id="phoneField" promptText="e.g. 01012345678" maxWidth="320"/>
+
+                <Label text="City" styleClass="field-label"/>
+                <TextField fx:id="cityField" promptText="Cairo" maxWidth="320"/>
+
+                <Label text="Street Name" styleClass="field-label"/>
+                <TextField fx:id="streetField" promptText="Tahrir St" maxWidth="320"/>
+
+                <Label text="Building No" styleClass="field-label"/>
+                <TextField fx:id="buildingField" promptText="10" maxWidth="320"/>
+
+                <Label text="Apartment No" styleClass="field-label"/>
+                <TextField fx:id="apartmentField" promptText="1" maxWidth="320"/>
+
+                <Button text="Register" onAction="#handleRegister"
+                        styleClass="primary-button" maxWidth="320" prefHeight="42"/>
+                <Button text="← Back" onAction="#handleBack"
+                        styleClass="ghost-button" maxWidth="320"/>
+            </VBox>
+        </VBox>
+    </ScrollPane>
+</StackPane>

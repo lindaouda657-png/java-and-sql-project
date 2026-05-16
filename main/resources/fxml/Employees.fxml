@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane styleClass="page-container"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.marketplace.shop.controller.EmployeesController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="top-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Button text="← Back" onAction="#handleBack" styleClass="secondary-button"/>
+            <Label text="Employee Management" styleClass="page-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="viewProfileButton"  text="👤 View Profile"        onAction="#handleViewProfile"   styleClass="secondary-button"/>
+            <Button fx:id="addButton"          text="➕ Add Employee"         onAction="#handleAddEmployee"   styleClass="primary-button"/>
+            <Button fx:id="fireButton"         text="🔥 Fire"                onAction="#handleFireEmployee"  styleClass="warning-button"/>
+            <Button fx:id="banButton"          text="🚫 Ban"                  onAction="#handleBanEmployee"   styleClass="danger-button"/>
+            <Button fx:id="deleteButton"       text="🗑 Delete Account"       onAction="#handleDeleteEmployee" styleClass="danger-button"/>
+            <Button fx:id="managePermsButton"  text="🔐 Permissions"          onAction="#handleManagePermissions" styleClass="primary-button"/>
+            <Button fx:id="setSalaryButton"    text="💰 Set Salary"            onAction="#handleSetSalary"         styleClass="primary-button"/>
+            <Button text="↻ Refresh"           onAction="#handleRefresh"      styleClass="secondary-button"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="12">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <Label text="Select an employee to fire, ban, delete their account, view their personal data, or manage their permissions." styleClass="muted-label" wrapText="true"/>
+            <TableView fx:id="employeeTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId"     text="ID"         prefWidth="60"/>
+                    <TableColumn fx:id="colName"   text="Name"       prefWidth="170"/>
+                    <TableColumn fx:id="colEmail"  text="Email"      prefWidth="210"/>
+                    <TableColumn fx:id="colDept"   text="Department" prefWidth="140"/>
+                    <TableColumn fx:id="colStatus" text="Status"     prefWidth="110"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

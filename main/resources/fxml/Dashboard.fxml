@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane styleClass="dashboard-container"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.marketplace.shop.controller.DashboardController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="app-header">
+            <padding><Insets top="18" right="28" bottom="18" left="28"/></padding>
+            <Label text="🛍  Marketplace" styleClass="brand"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="welcomeLabel" text="Welcome" styleClass="welcome-label"/>
+            <Label fx:id="roleBadge" text="" styleClass="role-badge"/>
+            <Button text="Logout" onAction="#handleLogout" styleClass="ghost-button"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="24">
+            <padding><Insets top="48" right="40" bottom="40" left="40"/></padding>
+            <Label text="Dashboard" styleClass="page-title"/>
+            <Label text="Choose a section to get started" styleClass="muted-label"/>
+            <FlowPane hgap="22" vgap="22" alignment="CENTER" prefWrapLength="820">
+                <Button fx:id="cardProducts" onAction="#goToProducts" styleClass="dashboard-card" prefWidth="220" prefHeight="130">
+                    <graphic><VBox alignment="CENTER" spacing="6">
+                        <Label text="📦" styleClass="card-icon"/>
+                        <Label text="Products" styleClass="card-title"/>
+                        <Label text="Browse &amp; manage stock" styleClass="card-sub"/>
+                    </VBox></graphic>
+                </Button>
+                <Button fx:id="cardOrders" onAction="#goToOrders" styleClass="dashboard-card" prefWidth="220" prefHeight="130">
+                    <graphic><VBox alignment="CENTER" spacing="6">
+                        <Label text="🧾" styleClass="card-icon"/>
+                        <Label text="Orders" styleClass="card-title"/>
+                        <Label text="Track &amp; fulfill orders" styleClass="card-sub"/>
+                    </VBox></graphic>
+                </Button>
+                <Button fx:id="cardCustomers" onAction="#goToCustomers" styleClass="dashboard-card" prefWidth="220" prefHeight="130">
+                    <graphic><VBox alignment="CENTER" spacing="6">
+                        <Label text="👥" styleClass="card-icon"/>
+                        <Label text="Customers" styleClass="card-title"/>
+                        <Label text="Profiles &amp; full address" styleClass="card-sub"/>
+                    </VBox></graphic>
+                </Button>
+                <Button fx:id="cardReviews" onAction="#goToReviews" styleClass="dashboard-card" prefWidth="220" prefHeight="130">
+                    <graphic><VBox alignment="CENTER" spacing="6">
+                        <Label text="⭐" styleClass="card-icon"/>
+                        <Label text="Reviews" styleClass="card-title"/>
+                        <Label text="See customer feedback" styleClass="card-sub"/>
+                    </VBox></graphic>
+                </Button>
+                <Button fx:id="cardEmployees" onAction="#goToEmployees" styleClass="dashboard-card" prefWidth="220" prefHeight="130">
+                    <graphic><VBox alignment="CENTER" spacing="6">
+                        <Label text="👔" styleClass="card-icon"/>
+                        <Label text="Employees" styleClass="card-title"/>
+                        <Label text="Staff directory" styleClass="card-sub"/>
+                    </VBox></graphic>
+                </Button>
+                <Button fx:id="cardPayments" onAction="#goToPayments" styleClass="dashboard-card" prefWidth="220" prefHeight="130">
+                    <graphic><VBox alignment="CENTER" spacing="6">
+                        <Label text="💳" styleClass="card-icon"/>
+                        <Label text="Payments" styleClass="card-title"/>
+                        <Label text="Transactions log" styleClass="card-sub"/>
+                    </VBox></graphic>
+                </Button>
+                <Button fx:id="cardCategories" onAction="#goToCategories" styleClass="dashboard-card" prefWidth="220" prefHeight="130">
+                    <graphic><VBox alignment="CENTER" spacing="6">
+                        <Label text="🏷" styleClass="card-icon"/>
+                        <Label text="Categories" styleClass="card-title"/>
+                        <Label text="Organize products" styleClass="card-sub"/>
+                    </VBox></graphic>
+                </Button>
+                <Button fx:id="cardReturns" onAction="#goToReturns" styleClass="dashboard-card" prefWidth="220" prefHeight="130">
+                    <graphic><VBox alignment="CENTER" spacing="6">
+                        <Label text="↩" styleClass="card-icon"/>
+                        <Label text="Returns" styleClass="card-title"/>
+                        <Label text="Handle return requests" styleClass="card-sub"/>
+                    </VBox></graphic>
+                </Button>
+                <Button fx:id="cardProfile" onAction="#goToProfile" styleClass="dashboard-card" prefWidth="220" prefHeight="130">
+                    <graphic><VBox alignment="CENTER" spacing="6">
+                        <Label text="👤" styleClass="card-icon"/>
+                        <Label text="My Profile" styleClass="card-title"/>
+                        <Label text="View &amp; edit your details" styleClass="card-sub"/>
+                    </VBox></graphic>
+                </Button>
+            </FlowPane>
+        </VBox>
+    </center>
+</BorderPane>

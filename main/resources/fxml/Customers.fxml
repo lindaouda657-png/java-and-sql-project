@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane styleClass="page-container"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.marketplace.shop.controller.CustomersController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="top-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Button text="← Back" onAction="#handleBack" styleClass="secondary-button"/>
+            <Label text="Customer Management" styleClass="page-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="searchField" promptText="Search customers..." prefWidth="200"/>
+            <Button text="Search" onAction="#handleSearch" styleClass="primary-button"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="15">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <TableView fx:id="customerTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colName" text="Name" prefWidth="160"/>
+                    <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+                    <TableColumn fx:id="colPhone" text="Phone" prefWidth="110"/>
+                    <TableColumn fx:id="colAddress" text="Full Address" prefWidth="280"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="90"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    <bottom>
+        <VBox spacing="8" styleClass="form-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="nameField" promptText="Name" prefWidth="150"/>
+                <TextField fx:id="emailField" promptText="Email" prefWidth="180"/>
+                <TextField fx:id="phoneField" promptText="Phone" prefWidth="120"/>
+                <TextField fx:id="cityField" promptText="City" prefWidth="110"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="streetField" promptText="Street" prefWidth="200"/>
+                <TextField fx:id="buildingField" promptText="Building #" prefWidth="100"/>
+                <TextField fx:id="apartmentField" promptText="Apartment #" prefWidth="100"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Add" onAction="#handleAdd" styleClass="primary-button"/>
+                <Button text="Update" onAction="#handleUpdate" styleClass="secondary-button"/>
+                <Button fx:id="banButton" text="Ban" onAction="#handleBan" styleClass="danger-button"/>
+                <Button fx:id="unbanButton" text="Unban" onAction="#handleUnban" styleClass="secondary-button"/>
+                <Button fx:id="deleteButton" text="Delete" onAction="#handleDelete" styleClass="danger-button"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane styleClass="dashboard-container"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.marketplace.shop.controller.CustomerHomeController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="app-header">
+            <padding><Insets top="16" right="28" bottom="16" left="28"/></padding>
+            <Label text="🛍  Marketplace" styleClass="brand"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="welcomeLabel" text="Hello" styleClass="welcome-label"/>
+            <Button text="My Profile" onAction="#goToProfile" styleClass="ghost-button"/>
+            <Button text="My Orders" onAction="#goToOrders" styleClass="ghost-button"/>
+            <Button text="🛒 Cart" onAction="#goToCart" styleClass="ghost-button"/>
+            <Button text="All Products" onAction="#goToAllProducts" styleClass="ghost-button"/>
+            <Button text="Logout" onAction="#handleLogout" styleClass="ghost-button"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="transparent-scroll">
+            <VBox alignment="TOP_CENTER" spacing="20">
+                <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+                <Label text="Shop by Category" styleClass="page-title"/>
+                <Label text="Pick a category to see all products with photos, price and details" styleClass="muted-label"/>
+                <FlowPane fx:id="categoriesPane" hgap="20" vgap="20" alignment="CENTER" prefWrapLength="900"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

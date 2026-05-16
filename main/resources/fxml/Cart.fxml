@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane styleClass="page-container"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.marketplace.shop.controller.CartController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="app-header">
+            <padding><Insets top="14" right="28" bottom="14" left="28"/></padding>
+            <Label text="🛍  Marketplace" styleClass="brand"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="← Back" onAction="#handleBack" styleClass="ghost-button"/>
+            <Label text="My Cart" styleClass="page-title"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="transparent-scroll">
+            <VBox spacing="20">
+                <padding><Insets top="24" right="36" bottom="36" left="36"/></padding>
+
+                <Label text="Cart Items" styleClass="page-title"/>
+                <VBox fx:id="cartItemsList" spacing="10"/>
+
+                <Separator/>
+
+                <HBox alignment="CENTER_RIGHT">
+                    <Label fx:id="totalLabel" text="Total: EGP 0.00" styleClass="product-price-big"/>
+                </HBox>
+
+                <Separator/>
+
+                <Label text="Shipping Address" styleClass="page-title"/>
+                <Label text="You can change the delivery address below — this won't affect your profile." styleClass="muted-label"/>
+
+                <GridPane hgap="16" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="120" prefWidth="120"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="120" prefWidth="120"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <Label text="City *" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <TextField fx:id="shipCity" promptText="City" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <Label text="Street *" styleClass="field-label" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                    <TextField fx:id="shipStreet" promptText="Street name" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+                    <Label text="Building" styleClass="field-label" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <TextField fx:id="shipBuilding" promptText="Building No." GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <Label text="Apartment" styleClass="field-label" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                    <TextField fx:id="shipApartment" promptText="Apt. No." GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                </GridPane>
+
+                <Separator/>
+
+                <Label text="Payment Method" styleClass="page-title"/>
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <Label text="Pay with:" styleClass="field-label"/>
+                    <ComboBox fx:id="paymentCombo" prefWidth="220"/>
+                </HBox>
+
+                <Separator/>
+
+                <HBox alignment="CENTER_RIGHT" spacing="12">
+                    <Button text="Cancel" onAction="#handleBack" styleClass="secondary-button"/>
+                    <Button fx:id="checkoutButton" text="✔  Place Order" onAction="#handleCheckout" styleClass="primary-button"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

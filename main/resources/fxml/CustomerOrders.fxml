@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane styleClass="page-container"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.marketplace.shop.controller.CustomerOrdersController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="top-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Button text="← Back" onAction="#handleBack" styleClass="secondary-button"/>
+            <Label text="My Orders" styleClass="page-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="🛒 Cart" onAction="#goToCart" styleClass="ghost-button"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="transparent-scroll">
+            <VBox fx:id="ordersList" spacing="12">
+                <padding><Insets top="20" right="30" bottom="20" left="30"/></padding>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

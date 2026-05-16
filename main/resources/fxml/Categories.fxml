@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane styleClass="page-container"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.marketplace.shop.controller.CategoriesController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="top-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Button text="← Back" onAction="#handleBack" styleClass="secondary-button"/>
+            <Label text="Category Management" styleClass="page-title"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="15">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <TableView fx:id="categoryTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
+                    <TableColumn fx:id="colName" text="Category Name" prefWidth="300"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="form-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <TextField fx:id="nameField" promptText="Category Name" prefWidth="250"/>
+            <Button text="Add" onAction="#handleAdd" styleClass="primary-button"/>
+            <Button text="Delete" onAction="#handleDelete" styleClass="danger-button"/>
+        </HBox>
+    </bottom>
+</BorderPane>

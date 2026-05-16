@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane styleClass="auth-stage"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.marketplace.shop.controller.LoginController">
+    <VBox alignment="CENTER" spacing="18" styleClass="auth-card" maxWidth="440" maxHeight="520">
+        <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+        <Label text="Marketplace Shop" styleClass="title-label"/>
+        <Label fx:id="roleLabel" text="Login" styleClass="subtitle-label"/>
+
+        <VBox spacing="10" maxWidth="320" alignment="CENTER_LEFT">
+            <Label text="Email" styleClass="field-label"/>
+            <TextField fx:id="emailField" promptText="you@example.com" maxWidth="320"/>
+            <Label text="Password" styleClass="field-label"/>
+            <PasswordField fx:id="passwordField" promptText="Enter your password" maxWidth="320"/>
+            <Button text="Sign in" onAction="#handleLogin" styleClass="primary-button" maxWidth="320" prefHeight="42"/>
+            <Button text="← Back" onAction="#handleBack" styleClass="ghost-button" maxWidth="320"/>
+        </VBox>
+    </VBox>
+</StackPane>

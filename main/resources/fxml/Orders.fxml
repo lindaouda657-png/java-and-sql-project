@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane styleClass="page-container"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.marketplace.shop.controller.OrdersController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="top-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Button text="← Back" onAction="#handleBack" styleClass="secondary-button"/>
+            <Label text="Order Management" styleClass="page-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="modeLabel" styleClass="muted-label"/>
+            <Button text="Refresh" onAction="#handleRefresh" styleClass="primary-button"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="15">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <TableView fx:id="orderTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="Order ID" prefWidth="80"/>
+                    <TableColumn fx:id="colCustomer" text="Customer" prefWidth="200"/>
+                    <TableColumn fx:id="colEmployee" text="Handled By" prefWidth="200"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="140"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="form-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Label text="Change status to:"/>
+            <ComboBox fx:id="statusCombo" prefWidth="180"/>
+            <Button fx:id="updateStatusButton" text="Update Status" onAction="#handleUpdateStatus" styleClass="primary-button"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="takeOrderButton" text="Take this order" onAction="#handleTakeOrder" styleClass="secondary-button"/>
+        </HBox>
+    </bottom>
+</BorderPane>

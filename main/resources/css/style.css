@@ -1,0 +1,314 @@
+/* Marketplace Shop — refined, modern but understated theme */
+
+* {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.root {
+    -fx-font-family: "Segoe UI", "Inter", "System", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f3f5f9;
+    -fx-text-fill: #1f2937;
+}
+
+.auth-stage {
+    -fx-background-color: linear-gradient(to bottom right, #eef2ff, #f8fafc 60%, #ecfeff);
+}
+
+.auth-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: #e5e7eb;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.10), 24, 0.15, 0, 8);
+}
+
+.auth-emoji {
+    -fx-font-size: 40px;
+}
+
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.subtitle-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748b;
+}
+
+.field-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #475569;
+    -fx-font-weight: bold;
+}
+
+.muted-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #94a3b8;
+}
+
+/* ---------- App header ---------- */
+.app-header, .top-bar {
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent transparent #e5e7eb transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.brand {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.welcome-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #475569;
+}
+
+.role-badge {
+    -fx-background-color: #eef2ff;
+    -fx-text-fill: #4338ca;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 10;
+    -fx-background-radius: 999;
+}
+
+.page-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+/* ---------- Buttons ---------- */
+.primary-button {
+    -fx-background-color: #4f46e5;
+    -fx-text-fill: white;
+    -fx-padding: 9 20;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+.primary-button:hover { -fx-background-color: #4338ca; }
+.primary-button:pressed { -fx-background-color: #3730a3; }
+
+.secondary-button {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #1f2937;
+    -fx-padding: 9 20;
+    -fx-background-radius: 8;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 8;
+    -fx-cursor: hand;
+}
+.secondary-button:hover { -fx-background-color: #f3f4f6; }
+
+.ghost-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4b5563;
+    -fx-padding: 7 14;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+.ghost-button:hover { -fx-background-color: #f3f4f6; }
+
+.danger-button {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: white;
+    -fx-padding: 9 20;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+.danger-button:hover { -fx-background-color: #dc2626; }
+
+/* ---------- Dashboard cards ---------- */
+.dashboard-card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 10, 0.1, 0, 3);
+    -fx-padding: 10;
+}
+.dashboard-card:hover {
+    -fx-border-color: #6366f1;
+    -fx-background-color: #f5f7ff;
+    -fx-effect: dropshadow(gaussian, rgba(79, 70, 229, 0.18), 16, 0.2, 0, 6);
+}
+.card-icon { -fx-font-size: 28px; }
+.card-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+.card-sub {
+    -fx-font-size: 11px;
+    -fx-text-fill: #64748b;
+}
+
+/* ---------- Tables ---------- */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 0;
+}
+.table-view .column-header-background {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 10 10 0 0;
+}
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #e5e7eb transparent;
+    -fx-size: 38;
+}
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #475569;
+    -fx-font-size: 12px;
+}
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #f1f5f9 transparent;
+    -fx-cell-size: 36;
+}
+.table-row-cell:odd { -fx-background-color: #fafbfc; }
+.table-row-cell:selected {
+    -fx-background-color: #eef2ff;
+    -fx-text-fill: #1e1b4b;
+}
+
+/* ---------- Form bar / inputs ---------- */
+.form-bar {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e5e7eb transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+.text-field, .password-field, .combo-box {
+    -fx-padding: 8 10;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-size: 13px;
+}
+.text-field:focused, .password-field:focused, .combo-box:focused {
+    -fx-border-color: #6366f1;
+    -fx-effect: dropshadow(gaussian, rgba(99, 102, 241, 0.25), 6, 0.2, 0, 0);
+}
+
+.combo-box .list-cell { -fx-padding: 6 10; }
+
+/* Containers */
+.page-container, .dashboard-container {
+    -fx-background-color: #f3f5f9;
+}
+
+/* ---------- Customer browse / Amazon-style ---------- */
+.transparent-scroll { -fx-background-color: transparent; }
+.transparent-scroll > .viewport { -fx-background-color: transparent; }
+
+.category-card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 10, 0.1, 0, 3);
+}
+.category-card:hover {
+    -fx-border-color: #6366f1;
+    -fx-background-color: #f5f7ff;
+}
+
+.product-card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 8, 0.1, 0, 2);
+}
+.product-image-box {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 10;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 10;
+}
+.product-name { -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #0f172a; }
+.product-price { -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4f46e5; }
+.product-price-big { -fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #4f46e5; }
+
+.image-side-panel {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e5e7eb;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+/* ---------- Order status pills ---------- */
+.status-pill {
+    -fx-padding: 5 12;
+    -fx-background-radius: 999;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+.pill-success { -fx-background-color: #dcfce7; -fx-text-fill: #166534; }
+.pill-info    { -fx-background-color: #dbeafe; -fx-text-fill: #1e3a8a; }
+.pill-warn    { -fx-background-color: #fef3c7; -fx-text-fill: #92400e; }
+.pill-danger  { -fx-background-color: #fee2e2; -fx-text-fill: #991b1b; }
+.pill-default { -fx-background-color: #e5e7eb; -fx-text-fill: #374151; }
+
+.order-row {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e5e7eb;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.review-row {
+    -fx-padding: 10;
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 8;
+}
+.review-head { -fx-font-weight: bold; -fx-text-fill: #0f172a; }
+
+.spinner .text-field {
+    -fx-pref-width: 60;
+}
+.cart-checkout-section {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e5e7eb;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 20;
+}
+
+.warning-button {
+    -fx-background-color: #f59e0b;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 6 14;
+}
+.warning-button:hover { -fx-background-color: #d97706; }
+
+.danger-button {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 6 14;
+}
+.danger-button:hover { -fx-background-color: #dc2626; }
+
+.read-only-field {
+    -fx-background-color: #f1f5f9;
+    -fx-text-fill: #64748b;
+}

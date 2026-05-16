@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane styleClass="page-container"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.marketplace.shop.controller.ProductDetailController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="top-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Button text="← Back" onAction="#handleBack" styleClass="secondary-button"/>
+            <Label text="Product details" styleClass="page-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="🛒 Cart" onAction="#handleGoToCart" styleClass="ghost-button"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="transparent-scroll">
+            <VBox spacing="20">
+                <padding><Insets top="20" right="30" bottom="30" left="30"/></padding>
+                <HBox spacing="24" alignment="TOP_LEFT">
+                    <StackPane styleClass="product-image-box" prefWidth="320" prefHeight="320">
+                        <ImageView fx:id="image" fitWidth="300" fitHeight="300" preserveRatio="true"/>
+                    </StackPane>
+                    <VBox spacing="10" HBox.hgrow="ALWAYS">
+                        <Label fx:id="nameLabel" text="" styleClass="page-title" wrapText="true"/>
+                        <Label fx:id="categoryLabel" text="" styleClass="muted-label"/>
+                        <Label fx:id="statusLabel" text="" styleClass="muted-label"/>
+                        <Label fx:id="priceLabel" text="" styleClass="product-price-big"/>
+                        <Label fx:id="qtyLabel" text="" styleClass="muted-label"/>
+                        <Label fx:id="descriptionLabel" text="" wrapText="true"/>
+                        <HBox fx:id="cartRow" spacing="10" alignment="CENTER_LEFT">
+                            <Label text="Qty:" styleClass="field-label"/>
+                            <ComboBox fx:id="qtyCombo" prefWidth="70"/>
+                            <Button fx:id="addToCartButton" text="🛒  Add to Cart" onAction="#handleAddToCart" styleClass="primary-button"/>
+                        </HBox>
+                    </VBox>
+                </HBox>
+
+                <Separator/>
+                <Label text="Customer Reviews" styleClass="page-title"/>
+                <VBox fx:id="reviewsBox" spacing="10"/>
+
+                <Separator/>
+                <Label text="Write a review" styleClass="field-label"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Rating:" styleClass="field-label"/>
+                    <ComboBox fx:id="ratingCombo" prefWidth="80"/>
+                </HBox>
+                <TextArea fx:id="reviewText" promptText="Share your experience..." prefRowCount="4"/>
+                <Button fx:id="submitReviewButton" text="Submit review" onAction="#handleSubmitReview" styleClass="primary-button"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

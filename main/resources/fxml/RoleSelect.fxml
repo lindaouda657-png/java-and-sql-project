@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane styleClass="auth-stage"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.marketplace.shop.controller.RoleSelectController">
+    <VBox alignment="CENTER" spacing="22" styleClass="auth-card" maxWidth="440" maxHeight="560">
+        <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+        <Label text="🛍" styleClass="auth-emoji"/>
+        <Label text="Marketplace Shop" styleClass="title-label"/>
+        <Label text="Sign in to continue" styleClass="subtitle-label"/>
+
+        <VBox spacing="12" maxWidth="320" alignment="CENTER">
+            <Button text="Continue as Admin" onAction="#selectAdmin"
+                    styleClass="primary-button" maxWidth="320" prefHeight="44"/>
+            <Button text="Continue as Employee" onAction="#selectEmployee"
+                    styleClass="secondary-button" maxWidth="320" prefHeight="44"/>
+            <Button text="Continue as Customer" onAction="#selectCustomer"
+                    styleClass="secondary-button" maxWidth="320" prefHeight="44"/>
+            <Button text="Create New Account" onAction="#createAccount"
+                    styleClass="ghost-button" maxWidth="320" prefHeight="44"/>
+        </VBox>
+        <Label text="Built for fast, reliable shop management" styleClass="muted-label"/>
+    </VBox>
+</StackPane>

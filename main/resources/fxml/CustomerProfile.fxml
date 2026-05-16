@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane styleClass="page-container"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.marketplace.shop.controller.CustomerProfileController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="top-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Button text="← Back" onAction="#handleBack" styleClass="secondary-button"/>
+            <Label text="My Profile" styleClass="page-title"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="transparent-scroll">
+            <VBox alignment="TOP_CENTER" spacing="20">
+                <padding><Insets top="30" right="40" bottom="30" left="40"/></padding>
+
+                <VBox spacing="14" styleClass="auth-card" maxWidth="520">
+                    <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+                    <Label text="Account details" styleClass="title-label"/>
+                    <Label text="Update any of your information below" styleClass="muted-label"/>
+
+                    <Label text="Full name" styleClass="field-label"/>
+                    <TextField fx:id="nameField"/>
+                    <Label text="Email" styleClass="field-label"/>
+                    <TextField fx:id="emailField"/>
+                    <Label text="Phone (used as password)" styleClass="field-label"/>
+                    <TextField fx:id="phoneField"/>
+
+                    <Separator/>
+                    <Label text="Shipping address" styleClass="field-label"/>
+                    <TextField fx:id="streetField" promptText="Street"/>
+                    <HBox spacing="10">
+                        <TextField fx:id="buildingField" promptText="Building #" HBox.hgrow="ALWAYS"/>
+                        <TextField fx:id="apartmentField" promptText="Apartment #" HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                    <TextField fx:id="cityField" promptText="City"/>
+
+                    <Button text="Save changes" onAction="#handleSave" styleClass="primary-button" maxWidth="Infinity" prefHeight="40"/>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
